@@ -22,8 +22,8 @@ public class CloudSimController {
 
 
     @PostMapping("/datacenters")
-    public void handleDatacenter(@RequestBody DatacenterRequest datacenterRequest) {
-        this.cloudSimService.handleDatacenter(datacenterRequest);
+    public String handleDatacenter(@RequestBody DatacenterRequest datacenterRequest) {
+        return this.cloudSimService.handleDatacenter(datacenterRequest);
     }
 
     @PostMapping("/virtual-machines")

@@ -13,10 +13,10 @@ import java.util.List;
 @Service
 public class CloudSimService {
     private  CloudSimInstance cloudSimInstance;
-    public void handleDatacenter(DatacenterRequest datacenterRequest){
+    public String handleDatacenter(DatacenterRequest datacenterRequest){
         cloudSimInstance = new CloudSimInstance();
         cloudSimInstance.initialisiserCloud();
-        cloudSimInstance.loaderDatacenters(datacenterRequest.getDatacenters());
+        return cloudSimInstance.loaderDatacenters(datacenterRequest.getDatacenters());
     }
 
     public List<CloudletInfo> handleVms(VmRequest vmRequest){

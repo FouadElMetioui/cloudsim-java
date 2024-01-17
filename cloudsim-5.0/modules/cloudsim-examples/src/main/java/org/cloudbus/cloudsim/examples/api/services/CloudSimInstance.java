@@ -42,11 +42,13 @@ public class CloudSimInstance {
 		cloudletList = new ArrayList<Cloudlet>();
 	}
 
-	public void loaderDatacenters(List<DatacenterModel> datacenterModels){
+	public String loaderDatacenters(List<DatacenterModel> datacenterModels){
 		System.out.println("------- start loading------------");
 		for(int i = 0 ; i<datacenterModels.size();i++){
 			Datacenter datacenter = createDatacenter("datacenter_"+i,datacenterModels.get(i));
 		}
+
+		return "{\"msg\": \"created\"}";
 	}
 
 	public void loadBrocker(){
